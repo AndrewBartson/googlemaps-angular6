@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { } from '@types/googlemaps';
 
@@ -7,7 +7,7 @@ import { } from '@types/googlemaps';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, AfterContentInit {
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
 
@@ -18,18 +18,18 @@ export class AppComponent {
 
   markerTypes = [
     {
-      text: "Parking", value: "parking_lot_maps.png"
+      text: 'Parking', value: 'parking_lot_maps.png'
     }
     // ,
     // {
-    //   text: "Library", value: "library_maps.png"
+    //   text: 'Library', value: 'library_maps.png'
     // },
     // {
-    //   text: "Information", value: "info-i_maps.png"
+    //   text: 'Information', value: 'info-i_maps.png'
     // }
   ];
 
-  selectedMarkerType: string = "parking_lot_maps.png";
+  selectedMarkerType = 'parking_lot_maps.png';
 
   isHidden = false;
 
@@ -38,25 +38,24 @@ export class AppComponent {
   }
 
   ngAfterContentInit() {
-    let mapProp = {
-      center: new google.maps.LatLng(18.5793, 73.8143),
-      zoom: 15,
+    const mapProp = {
+      center: new google.maps.LatLng(38.617319, -98.0),
+      zoom: 5,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-
   }
 
   setMapType(mapTypeId: string) {
-    this.map.setMapTypeId(mapTypeId)
+    this.map.setMapTypeId(mapTypeId);
   }
 
   setCenter() {
     this.map.setCenter(new google.maps.LatLng(this.latitude, this.longitude));
 
-    let location = new google.maps.LatLng(this.latitude, this.longitude);
+    const location = new google.maps.LatLng(this.latitude, this.longitude);
 
-    let marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: location,
       map: this.map,
       title: 'Got you!'
@@ -79,14 +78,13 @@ export class AppComponent {
 
   showCustomMarker() {
 
-
     this.map.setCenter(new google.maps.LatLng(this.latitude, this.longitude));
 
-    let location = new google.maps.LatLng(this.latitude, this.longitude);
+    const location = new google.maps.LatLng(this.latitude, this.longitude);
 
     console.log(`selected marker: ${this.selectedMarkerType}`);
 
-    let marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: location,
       map: this.map,
       icon: this.iconBase + this.selectedMarkerType,
@@ -95,8 +93,8 @@ export class AppComponent {
   }
 
   toggleMap() {
-    this.isHidden = !this.isHidden;
 
+    this.isHidden = !this.isHidden;
     this.gmapElement.nativeElement.hidden = this.isHidden;
   }
 }

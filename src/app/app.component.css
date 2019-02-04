@@ -1,3 +1,9 @@
 button, input{
     margin-left: 10px
 }
+.col {
+  padding: 0px;
+}
+.sidebar {
+  max-width: 250px;
+}
