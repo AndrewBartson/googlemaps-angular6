@@ -1,0 +1,141 @@
+h1 {
+  font-size: 1.85rem;
+  margin: 0 auto;
+  font-weight: 300;
+}
+h3 {
+  font-size: 1.3rem;
+  margin: 0 20px;
+  font-weight: 400;
+}
+h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: auto;
+}
+
+h1, h3, h4, label {
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  text-shadow: 1px 3px 2px #b3bcf9;
+  color: #000;
+}
+a {
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+}
+.col {
+  padding: 0px;
+}
+.sidebar {
+  width: 248px;
+  border-right: solid gray 1px;
+  height: 100vh;
+  float: left;
+  color: #0000b4;
+  display: grid;
+  grid-template-rows: 420px 45px auto 50px 50px;
+  align-items: start;
+  background-color: #eee;
+}
+.showForecasts:hover,
+#goBack:hover,
+#startOver:hover{
+  text-decoration: none;
+  color: #0000b4;
+  cursor: pointer;
+  border-radius: 6px;
+}
+#mainTitle {
+  display: grid;
+  grid-template-rows: 90px 40px 40px 70px 70px 65px 45px;
+  align-items: center;
+}
+.showForecasts {
+  margin: 0 40px;
+}
+#startOver {
+  margin: 0 30px;
+}
+#startOver, .showForecasts {
+  color: black;
+  /* border-color: #6699cc; */
+}
+.invisible {
+  visibility: hidden;
+}
+.grid {
+  display: grid;
+  align-items: center;
+}
+#footer {
+  display: grid;
+  grid-template-rows: 1fr;
+  align-items: center;
+  text-align: center;
+}
+#footer p {
+  font-size: 14px;
+  margin: 0;
+  color: #3e3a3a;
+  text-shadow: 1px 3px 2px #ddd;
+}
+#cityNames {
+  margin: 0;
+  text-align: center;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 30px);
+  align-items: start;
+}
+#cityNames div {
+  height: 28px;
+}
+.placeName {
+  align-self: start;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  text-shadow: 1px 3px 2px #ddd;
+  color: #3e3a3a;
+}
+.message {
+  color: red;
+}
+.truckIcon {
+  height: 75px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+#origin, #destination, #miles_per_day {
+  margin: 0;
+  border-color: grey;
+}
+#miles_per_day {
+  padding: 6px 2px 6px 6px;
+}
+.form-group {
+  margin: 0 auto;
+  color: black;
+}
+label {
+  margin-left: 4px;
+  margin-bottom: 3px;
+  font-size: 1.1rem;
+}
+input {
+  height: 29px;
+}
+input[type="number"] {
+	width: 65px;
+}
+#mpd_grid {
+  display: grid;
+  grid-template-columns: 129px 65px;
+}
+#mpd_grid label, #mpd_grid input {
+  display: inline-block;
+  text-align: left;
+}

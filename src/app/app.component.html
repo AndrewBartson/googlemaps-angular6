@@ -1,20 +1,27 @@
 <div class="container-fluid">
   <div class="row"><!-- row A -->
-    <div class="col sidebar">
-      <form class="form-inline" #form="ngForm">
+    <app-sidebar></app-sidebar>
+    <div id="sidebarOld">
+      <form id="latLongForm" class="form-inline" #form="ngForm">
         <div class="form-group">
-          <input type="text" class="form-control" name="latitude" [(ngModel)]="latitude" placeholder="Enter latitude" required>
+          <input type="text" class="form-control" name="latitude"
+            [(ngModel)]="latitude" placeholder="Enter latitude" required>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="longitude" [(ngModel)]="longitude" placeholder="Enter longitude" required>
+          <input type="text" class="form-control" name="longitude"
+            [(ngModel)]="longitude" placeholder="Enter longitude" required>
         </div>
-        <button type="button" (click)="setCenter()" class="btn btn-primary" [disabled]="form.invalid"> Go</button>
+        <div class="form-group">
+        <button type="button" (click)="setCenter()" class="btn btn-primary"
+          [disabled]="form.invalid"> Go</button>
+        </div>
       </form>
       <label>Select Marker: </label>
       <select [(ngModel)]="selectedMarkerType" name="category">
         <option *ngFor="let marker of markerTypes" [value]="marker.value">{{ marker.text }}</option>
       </select>
-      <button type="button" (click)="showCustomMarker()" class="btn btn-primary" [disabled]="form.invalid"> Custom Marker</button>
+      <button type="button" (click)="showCustomMarker()" class="btn btn-primary"
+        [disabled]="form.invalid"> Custom Marker</button>
       <button (click)="setMapType('terrain')" class="btn btn-primary">Terrain</button>
       <button (click)="setMapType('satellite')" class="btn btn-danger">Satellite</button>
       <button (click)="setMapType('roadmap')" class="btn btn-warning">Road Map</button>

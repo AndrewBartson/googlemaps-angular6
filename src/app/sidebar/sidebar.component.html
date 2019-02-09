@@ -1,0 +1,59 @@
+<div id="container">
+    <div id="sidebarNew" class="col sidebar">
+      <div id="mainTitle">
+        <img class="truckIcon" src="../../assets/images/truck.gif">
+        <h1>SUPER TRUCKER</h1>
+        <h3>Weather Reports</h3>
+        <div class="form-group">
+            <label for="username">ORIGIN</label>
+            <input class="form-control is-valid" type="text" id="origin">
+        </div>
+        <div class="form-group">
+            <label for="username">DESTINATION</label>
+            <input class="form-control is-valid" type="text" id="destination">
+        </div>
+        <div id="mpd_grid" class="form-group">
+            <label for="username">MILES PER DAY</label>
+            <input class="form-control is-valid" type="number" id="miles_per_day" min="25" max="4800" step="20" title="Miles">
+        </div>
+        <button [disabled]="!enableShow" class="showForecasts btn_sidebar">
+          Show forecasts
+        </button>
+      </div>
+        <h4>Cities on your Route</h4>
+
+
+      <div id="cityNames" class="list-unstyled">
+        <div *ngFor="let leg of legs; let i = index">
+          <p class="placeName" *ngIf="i !== legs.length - 1">
+              {{ leg.start_address.city }} {{ leg.start_address.state }}
+              <!-- <img class="d-inline-block" [src]="leg.image" /> -->
+            <!-- <ul class="list-group" *ngIf="showDetails">
+              <li class="list-group-item">Distance: {{ leg.distance.text }}</li>
+              <li class="list-group-item">Drive time: {{ leg.duration.text }}</li>
+            </ul> -->
+          </p>
+          <p class="placeName" *ngIf="i === legs.length - 1">
+            {{ leg.start_address.city }} {{ leg.start_address.state }}
+            <!-- <img class="d-inline" src="{{ leg.image }}" /> -->
+          </p>
+        </div>
+      <h4 *ngIf="legs.length === 0">No Trip Selected</h4>
+      </div>
+
+      <div class="grid">
+        <button [disabled]="!enableShow" class="showForecasts btn_sidebar">
+          Show forecasts
+        </button>
+      </div>
+      <div class="grid">
+        <button id="startOver" [disabled]="!enableErase" class="btn_sidebar">
+          <a href="index.html">Erase and Start Over</a>
+        </button>
+      </div>
+      <!-- <div id="footer">
+        <p>Andrew Bartson, Seattle</p>
+      </div> -->
+    </div><!-- end sidebar  -->
+
+</div>

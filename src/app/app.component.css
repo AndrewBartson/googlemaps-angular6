@@ -4,6 +4,16 @@ button, input{
 .col {
   padding: 0px;
 }
-.sidebar {
-  max-width: 250px;
+#sidebarOld {
+  width: 248px;
+  display: grid;
+  display: none;
+  grid-template-rows: 135px 45px 45px 45px 45px 45px 45px 45px;
+}
+#latLongForm {
+  display: grid;
+  grid-template-rows: 45px 45px 45px;
+}
+app-sidebar {
+  /* display: none; */
 }
