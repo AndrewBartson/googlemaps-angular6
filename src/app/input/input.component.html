@@ -1,0 +1,205 @@
+<form
+  *ngIf="showForm"
+  id="tripForm"
+  (submit)="onGetRoute(tripForm)"
+  #tripForm="ngForm"
+  class="inputForm"
+>
+  <div class="sectionText item_A">
+    Add Options to Trip:
+  </div>
+  <mat-checkbox id="weather" class="clickInput item_B" name="weather" ngModel>
+    Weather
+  </mat-checkbox>
+  <mat-checkbox id="hotels" class="clickInput item_C" name="hotels" ngModel>
+    Hotels
+  </mat-checkbox>
+  <mat-checkbox
+    id="truck_stops"
+    class="clickInput item_D"
+    name="truck_stops"
+    ngModel
+  >
+    Truck Stops
+  </mat-checkbox>
+  <div class="item_E">
+    <button (click)="showMoreLess()" type="button" class="loginBtn"  mat-raised-button>
+      {{ adv_input_visible ? 'Less Settings' : 'More Settings' }}
+    </button>
+  </div>
+  <div class="sectionText item_F"
+    [ngClass]="{ 'hideToStart' : !adv_input_visible }">
+    Popular Settings:
+  </div>
+  <mat-radio-group [ngModel]="options" name="options" class="item_G"
+    [ngClass]="{ 'hideToStart' : !adv_input_visible }">
+    <mat-radio-button
+      type="radio"
+      id="average"
+      class="item_H clickInput"
+      value="average"
+      (click)="useQuickPick(settings.average)"
+    >
+      Pope Francis
+    </mat-radio-button>
+    <mat-radio-button
+    type="radio"
+    id="fast"
+    class="item_I clickInput"
+    value="fast"
+    (click)="useQuickPick(settings.fast)"
+  >
+    James Bond
+  </mat-radio-button>
+    <mat-radio-button
+      type="radio"
+      id="trucker"
+      class="item_J clickInput"
+      [ngClass]="{ 'hideToStart' : !adv_input_visible }"
+      value="trucker"
+      (click)="useQuickPick(settings.trucker)"
+    >
+      Super Trucker
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <div class="item_K">
+    <button type="button" class="loginBtn" mat-raised-button>
+      Login
+    </button>
+  </div>
+
+  <mat-form-field class="item_N">
+    <input
+      matInput
+      placeholder="Starting Point"
+      id="origin"
+      name="origin"
+      value=""
+      minlength="2"
+      required
+      ngModel
+      #origin="ngModel"
+    />
+    <mat-error *ngIf="origin.invalid && origin.touched">
+      Please enter Starting Point.
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="item_O">
+    <input
+      matInput
+      placeholder="Destination"
+      id="end_point"
+      name="end_point"
+      value=""
+      minlength="2"
+      required
+      ngModel
+      #end_point="ngModel"
+    />
+    <mat-error *ngIf="end_point.invalid && end_point.touched">
+      Please enter Destination.
+    </mat-error>
+  </mat-form-field>
+  <div class="item_P"
+    [ngClass]="{
+      'item_P_small' : !adv_input_visible,
+      'item_P_large' : adv_input_visible,
+      'highLight' : adv_input_visible,
+      'mat-elevation-z2' : adv_input_visible }">
+    <mat-form-field
+      [ngClass]="{
+        'item_Q' : !adv_input_visible,
+        'item_Q_jump' : adv_input_visible
+        }">
+      <input
+        matInput
+        placeholder="Miles Per Day"
+        id="miles_per_day"
+        name="miles_per_day"
+        type="number"
+        value=""
+        min="20"
+        max="4800"
+        step="20"
+        ngModel
+        #miles_per_day="ngModel"
+      />
+    </mat-form-field>
+    <mat-form-field class="item_R"
+    [ngClass]="{ 'hideToStart' : !adv_input_visible }">
+      <input
+        matInput
+        placeholder="Average Speed"
+        id="avg_speed"
+        name="avg_speed"
+        type="number"
+        value=""
+        min="25"
+        max="200"
+        ngModel
+        #depart_time="ngModel"
+      />
+    </mat-form-field>
+    <mat-form-field class="item_S"
+    [ngClass]="{ 'hideToStart' : !adv_input_visible }">
+      <input
+        matInput
+        placeholder="Hours Driving Per Day"
+        id="hours_driving"
+        name="hours_driving"
+        type="number"
+        value=""
+        min="1"
+        max="24"
+        step="0.25"
+        ngModel
+        #depart_time="ngModel"
+      />
+    </mat-form-field>
+</div>
+  <mat-form-field
+    [ngClass]="{
+    'item_T' : !adv_input_visible,
+    'item_T_jump' : adv_input_visible
+    }">
+    <input
+      matInput
+      placeholder="Departure Date/Time"
+      value=""
+      id="depart_time"
+      name="depart_time"
+      type="number"
+      [ngModel]="defaultDepartTime"
+      #depart_time="ngModel"
+    />
+  </mat-form-field>
+
+  <div [ngClass]="{
+    'item_U' : !adv_input_visible,
+    'item_U_jump' : adv_input_visible
+    }">
+    <button
+      type="submit"
+      class="createRoute item"
+      mat-raised-button
+      [disabled]="!tripForm.valid"
+    >
+      Create Route
+    </button>
+  </div>
+</form>
+<div class="container" *ngIf="showTrip && submitted">
+  <mat-card class="cardMargins">
+    <mat-card-title>Input Data for Planning Trip</mat-card-title>
+    <mat-card-content>Starting Point: {{ input.origin }}</mat-card-content>
+    <mat-card-content>Destination: {{ input.end_point }}</mat-card-content>
+    <mat-card-content>Speed (miles per hour): {{ input.avg_speed }}</mat-card-content>
+    <mat-card-content>Hours driving per day: {{ input.hours_driving }}</mat-card-content>
+    <mat-card-content>Total miles per day: {{ input.miles_per_day }}</mat-card-content>
+    <mat-card-content>Show Weather on Route: {{ input.weather }}</mat-card-content>
+    <mat-card-content>Show Hotels on Route: {{ input.hotels }}</mat-card-content>
+    <mat-card-content>Show Truck Stops on Route: {{ input.truck_stops }}</mat-card-content>
+  </mat-card>
+</div>
+

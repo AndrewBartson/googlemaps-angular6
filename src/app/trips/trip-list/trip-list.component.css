@@ -1,0 +1,24 @@
+#route {
+  display: grid;
+  grid-template-rows: 45px auto;
+  border: 1px gray solid;
+  border-radius: 5px;
+  margin: 0 15px;
+  background-color: white;
+  padding-bottom: 8px;
+}
+#city_list {
+  margin: 0;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 30px);
+}
+#city_list li {
+  height: 28px;
+}
+.place_name {
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+  text-shadow: 1px 3px 2px #ddd;
+  color: #3e3a3a;
+}

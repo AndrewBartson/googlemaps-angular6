@@ -1,0 +1,31 @@
+<p>
+  trip-list works!
+</p>
+<div id="route">
+  <h4>Suggested Route</h4>
+
+  <ol id="city_list">
+    <li *ngFor="let leg of legs; let i = index">
+      <p class="place_name" *ngIf="i !== legs.length - 1">
+        {{ leg.start_address.city }} {{ leg.start_address.state }}
+        <!-- <img class="d-inline-block" [src]="leg.image" /> -->
+        <!-- <ul class="list-group" *ngIf="showDetails">
+          <li class="list-group-item">Distance: {{ leg.distance.text }}</li>
+          <li class="list-group-item">Drive time: {{ leg.duration.text }}</li>
+        </ul> -->
+      </p>
+      <p class="place_name" *ngIf="i === legs.length - 1">
+        {{ leg.start_address.city }} {{ leg.start_address.state }}
+        <!-- <img class="d-inline" src="{{ leg.image }}" /> -->
+      </p>
+    </li>
+    <h4 *ngIf="legs.length === 0">Enter Trip Preferences</h4>
+  </ol>
+</div>
+<button [disabled]="!enableShow" class="showForecasts">
+  Go to Weather Data
+</button>
+<button id="startOver" [disabled]="!enableErase">
+  <a href="index.html">Erase and Start Over</a>
+</button>
+

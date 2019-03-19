@@ -1,11 +1,12 @@
 let legs = [
   {
+    id: 100,
     start_address: {
       city: "Bellingham",
       state: "WA"
     },
     end_address: {
-      city: "Bonner",
+      city: "Missoula",
       state: "MT"
     },
     duration: {
@@ -18,6 +19,7 @@ let legs = [
     }
   },
   {
+    id: 101,
     start_address: {
       city: "Bonner",
       state: "MT"
@@ -36,6 +38,7 @@ let legs = [
     }
   },
   {
+    id: 102,
     start_address: {
       city: "Hammond",
       state: "MT"
@@ -54,6 +57,7 @@ let legs = [
     }
   },
   {
+    id: 103,
     start_address: {
       city: "Sloan",
       state: "IA"
@@ -72,6 +76,7 @@ let legs = [
     }
   },
   {
+    id: 104,
     start_address: {
       city: "Nashville",
       state: "IL"
@@ -90,6 +95,7 @@ let legs = [
     }
   },
   {
+    id: 105,
     start_address: {
       city: "Locust Grove",
       state: "GA"
@@ -108,6 +114,7 @@ let legs = [
     }
   },
   {
+    id: 106,
     start_address: {
       city: "West Palm Beach",
       state: "FL"
@@ -126,6 +133,7 @@ let legs = [
     }
   },
   {
+    id: 107,
     start_address: {
       city: "Hialeah",
       state: "FL"

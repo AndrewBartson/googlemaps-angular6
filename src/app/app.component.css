@@ -1,19 +1,40 @@
-button, input{
-    margin-left: 10px
+html {
+  box-sizing: border-box;
 }
-.col {
-  padding: 0px;
+*:before,
+*:after {
+  box-sizing: inherit;
 }
-#sidebarOld {
-  width: 248px;
+img {
+  max-width: 100%;
+}
+#mapWrapper {
+  margin-left: 480px;
+  height: 100vh;
+  overflow: hidden;
+}
+#mapDiv {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+main-area {
+  width: 480px;
+}
+
+/* Styles for balram's demo page with buttons */
+
+#inputDemoWrapper {
+}
+#inputDemo {
+  width: 480px;
+  float: left;
   display: grid;
-  display: none;
   grid-template-rows: 135px 45px 45px 45px 45px 45px 45px 45px;
+  display: none;
 }
 #latLongForm {
   display: grid;
   grid-template-rows: 45px 45px 45px;
-}
-app-sidebar {
-  /* display: none; */
 }
