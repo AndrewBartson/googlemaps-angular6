@@ -50,25 +50,33 @@
   grid-row: 6 / 13;
   display: grid;
 }
-.item_P_small {
+.item_P_short {
   grid-template-rows: 72px 72px 72px;
 }
-.item_P_large {
+.item_P_tall {
   padding-top: 10px;
   grid-template-rows: 85px 72px 72px;
-  margin-bottom: 10px;
 }
 .item_Q {
   grid-row-start: 1;
 }
 .item_Q_jump {
   grid-row-start: 3;
+  width: 155px;
 }
 .item_R {
   grid-row: 1;
 }
+.item_R_jump {
+  grid-row: 1;
+  width: 155px;
+}
 .item_S {
   grid-row: 2;
+}
+.item_S_jump {
+  grid-row: 2;
+  width: 155px;
 }
 .item_T {
   grid-column-start: 2;

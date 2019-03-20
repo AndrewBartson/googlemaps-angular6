@@ -41,11 +41,13 @@ mat-form-field {
 .item_K {
   display: none;
 }
-.highLight {
+.item_P_tall {
   background-color: #f7f7f7;
   border: 1px solid #e9e9e9;
   border-radius: 7px;
-  margin: 0 18px 0 0;
+  margin: 0 18px;
+  margin-bottom: 10px;
+  width: 185px;
 }
 .item_S, .item_R, .item_Q_jump {
   margin-right: 17px;
@@ -53,9 +55,20 @@ mat-form-field {
 .item_T_jump {
   margin-top: 7px;
 }
-.cardMargins {
-  margin: 10px;
-}
 .container {
   padding: 15px;
+}
+.inputReport {
+  margin: 10px;
+  padding: 20px 20px 30px 40px;
+}
+mat-card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+mat-card-content div {
+  margin: 0 15px;
+}
+.formData {
+  color: darkblue;
 }

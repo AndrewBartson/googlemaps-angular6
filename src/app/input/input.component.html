@@ -103,8 +103,8 @@
   </mat-form-field>
   <div class="item_P"
     [ngClass]="{
-      'item_P_small' : !adv_input_visible,
-      'item_P_large' : adv_input_visible,
+      'item_P_short' : !adv_input_visible,
+      'item_P_tall' : adv_input_visible,
       'highLight' : adv_input_visible,
       'mat-elevation-z2' : adv_input_visible }">
     <mat-form-field
@@ -126,8 +126,12 @@
         #miles_per_day="ngModel"
       />
     </mat-form-field>
-    <mat-form-field class="item_R"
-    [ngClass]="{ 'hideToStart' : !adv_input_visible }">
+    <mat-form-field
+      hintLabel="Miles per hour"
+      [ngClass]="{
+        'hideToStart' : !adv_input_visible,
+        'item_R' : !adv_input_visible,
+        'item_R_jump' : adv_input_visible }">
       <input
         matInput
         placeholder="Average Speed"
@@ -141,8 +145,11 @@
         #depart_time="ngModel"
       />
     </mat-form-field>
-    <mat-form-field class="item_S"
-    [ngClass]="{ 'hideToStart' : !adv_input_visible }">
+    <mat-form-field
+    [ngClass]="{
+      'hideToStart' : !adv_input_visible,
+      'item_S' : !adv_input_visible,
+      'item_S_jump' : adv_input_visible }">
       <input
         matInput
         placeholder="Hours Driving Per Day"
@@ -190,16 +197,32 @@
   </div>
 </form>
 <div class="container" *ngIf="showTrip && submitted">
-  <mat-card class="cardMargins">
+  <mat-card class="inputReport">
     <mat-card-title>Input Data for Planning Trip</mat-card-title>
-    <mat-card-content>Starting Point: {{ input.origin }}</mat-card-content>
-    <mat-card-content>Destination: {{ input.end_point }}</mat-card-content>
-    <mat-card-content>Speed (miles per hour): {{ input.avg_speed }}</mat-card-content>
-    <mat-card-content>Hours driving per day: {{ input.hours_driving }}</mat-card-content>
-    <mat-card-content>Total miles per day: {{ input.miles_per_day }}</mat-card-content>
-    <mat-card-content>Show Weather on Route: {{ input.weather }}</mat-card-content>
-    <mat-card-content>Show Hotels on Route: {{ input.hotels }}</mat-card-content>
-    <mat-card-content>Show Truck Stops on Route: {{ input.truck_stops }}</mat-card-content>
+    <mat-card-content>
+      <div>Starting Point </div><div class="formData">{{ input.origin }}</div>
+    </mat-card-content>
+    <mat-card-content>
+      <div>Destination </div><div class="formData">{{ input.end_point }}</div>
+    </mat-card-content>
+    <mat-card-content>
+      <div>Speed - miles per hour </div><div class="formData">{{ input.avg_speed }}</div>
+    </mat-card-content>
+    <mat-card-content>
+      <div>Hours driving per day </div><div class="formData">{{ input.hours_driving }}</div>
+    </mat-card-content>
+    <mat-card-content>
+      <div>Total miles per day </div><div class="formData">{{ input.miles_per_day }}</div>
+    </mat-card-content>
+    <mat-card-content>
+      <div>Show Weather </div><div class="formData">{{ input.weather }}</div>
+    </mat-card-content>
+    <mat-card-content>
+      <div>Show Hotels </div><div class="formData">{{ input.hotels }}</div>
+    </mat-card-content>
+    <mat-card-content>
+      <div>Show Truck Stops </div><div class="formData">{{ input.truck_stops }}</div>
+    </mat-card-content>
   </mat-card>
 </div>
 
