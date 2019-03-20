@@ -2,7 +2,26 @@
 
 ## Open the Project
 
-In your terminal, enter `ng serve` to start up a dev server. Then view the site in your browser: `http://localhost:4200/` However the "Create Route" button won't work because the backend API is not deployed. The backend code is not open source.
+In your terminal, enter `ng serve` to start up a dev server. Then view the site in your browser: `http://localhost:4200/` 
+
+You can enter input. However the app is broken because the backend API is not deployed. The backend code is not open source.
+
+## SuperTrucker Preliminary Screenshots - Input Form 
+
+![SuperTrucker Screenshot - Input Form 1](https://github.com/AndrewBartson/super-trucker-10-4/blob/master/src/assets/images/input_form_1.png?raw=true)
+
+![SuperTrucker Screenshot - Input Form 2](https://github.com/AndrewBartson/super-trucker-10-4/blob/master/src/assets/images/input_form_2.png?raw=true)
+
+![SuperTrucker Screenshot - Input Form 3](https://github.com/AndrewBartson/super-trucker-10-4/blob/master/src/assets/images/input_form_3.png?raw=true)
+
+
+
+## SuperTrucker Components and Structure
+
+![SuperTrucker Components and Structure - Part 1](https://github.com/AndrewBartson/super-trucker-10-4/blob/master/src/assets/images/erd_1.png?raw=true)
+
+![SuperTrucker Components and Structure - Part 2](https://github.com/AndrewBartson/super-trucker-10-4/blob/master/src/assets/images/erd_2.png?raw=true)
+
 
 ## Build
 
@@ -46,8 +65,7 @@ geoPoints, roadNodes, tripNodes, routePoints, wayPoints, mainPoints, itinerary, 
 
 ## Domain name ideas
 
-gobigtrucker.com, supertruckertenfour,
-
+gobigtrucker.com, supertruckertenfour.com
 
 
 
